@@ -10,4 +10,4 @@ NDP-specific parts for Cadmus.
 
 ## Parts
 
-- [NotableWordFormsPart](docs/notable-word-forms-part.md))
+- [NotableWordFormsPart](docs/notable-word-forms.md)
