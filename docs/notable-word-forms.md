@@ -12,7 +12,7 @@ NDP-specific. This is a collection of linguistically or philologically notable w
   - `tags` (`string[]` 📚 `notable-word-forms-tags`): tags associated to the word form (e.g. POS, linguistic phenomena, etc.).
   - `note` (`string`): an optional note about the word form.
   - `referenceForm` (`string`): a reference form for the word form. For instance, if the word form is misspelled, this can contain the correct form.
-  - `operations` (`string[]`): operations to be performed to transform the word form into the reference form, or vice-versa (according to `isValueTarget`).
+  - `operations` (`string[]`): operations to be performed to transform the word form into the reference form, or vice-versa (according to `isValueTarget`). When using operations, the 📚 `notable-word-forms-op-tags` hierarchical thesaurus can be used.
   - `isValueTarget` (`bool`): true if the operations are to be applied starting from the reference form to get the word form; false to go from the word form to the reference form.
   - `references` (🧱 [DocReference[]](https://github.com/vedph/cadmus-bricks/blob/master/docs/doc-reference.md)):
     - `type` (`string` 📚 `doc-reference-types`)
