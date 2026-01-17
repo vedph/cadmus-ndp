@@ -11,3 +11,9 @@ NDP-specific parts for Cadmus.
 ## Parts
 
 - [NotableWordFormsPart](docs/notable-word-forms.md)
+
+## History
+
+### 1.0.1
+
+- 2026-01-17: updated packages.
