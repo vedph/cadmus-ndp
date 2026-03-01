@@ -90,6 +90,8 @@ public sealed class TextPassagesPartSeeder : PartSeederBase,
 
             if (_options.Features?.Count > 0)
                 passage.Features = [faker.PickRandom(_options.Features)];
+
+            passages.Add(passage);
         }
 
         return passages;
