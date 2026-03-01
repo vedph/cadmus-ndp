@@ -30,6 +30,16 @@
             "syn"
           ]
         }
+      },
+      {
+        "id": "seed.it.vedph.ndp.text-passages",
+        "options": {
+          "locationPattern": "@dc:If. {R} {N}",
+          "features": [
+            "alpha",
+            "beta"
+          ]
+        }
       }
     ]
   },

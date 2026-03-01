@@ -16,8 +16,8 @@ namespace Cadmus.Seed.Ndp.Parts;
 /// </summary>
 /// <seealso cref="PartSeederBase" />
 [Tag("seed.it.vedph.ndp.text-passages")]
-public sealed class TextPassagesPartSeeder : PartSeederBase
-    , IConfigurable<TextPassagesPartSeederOptions>
+public sealed class TextPassagesPartSeeder : PartSeederBase,
+    IConfigurable<TextPassagesPartSeederOptions>
 {
     private TextPassagesPartSeederOptions _options = new();
 
