@@ -1,9 +1,8 @@
 ﻿using Cadmus.Core;
+using Cadmus.Refs.Bricks;
 using Cadmus.Seed.Ndp.Parts;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Xunit;
 
 namespace Cadmus.Ndp.Parts.Test;
 
@@ -76,23 +75,29 @@ public sealed class TextPassagesPartTest
 
         for (int n = 1; n <= 3; n++)
         {
-            // TODO add entry to part setting its pin-related
-            // properties in a predictable way, so we can test them
+            part.Passages.Add(new TextPassage
+            {
+                Location = new DocReference
+                {
+                    Citation = $"Il.{n}"
+                }
+            });
         }
 
         List<DataPin> pins = [.. part.GetDataPins(null)];
 
-        Assert.Equal(5, pins.Count);
+        Assert.Equal(4, pins.Count);
 
         DataPin? pin = pins.Find(p => p.Name == "tot-count");
         Assert.NotNull(pin);
         TestHelper.AssertPinIds(part, pin!);
         Assert.Equal("3", pin!.Value);
 
-        // TODO: assert counts and values e.g.:
-        // pin = pins.Find(p => p.Name == "pos-bottom-count");
-        // Assert.NotNull(pin);
-        // TestHelper.AssertPinIds(part, pin!);
-        // Assert.Equal("2", pin.Value);
+        for (int n = 1; n <= 3; n++)
+        {
+            pin = pins.Find(p => p.Name == "location" && p.Value == $"Il.{n}");
+            Assert.NotNull(pin);
+            TestHelper.AssertPinIds(part, pin!);
+        }
     }
 }

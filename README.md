@@ -11,10 +11,11 @@ NDP-specific parts for Cadmus.
 ## Parts
 
 - [NotableWordFormsPart](docs/notable-word-forms.md)
+- [TextPassagesPart](docs/text-passages.md)
 
 ## History
 
-- 2026-03-01: adding text passages part.
+- 2026-03-01: added text passages part.
 
 ### 1.0.4
 
