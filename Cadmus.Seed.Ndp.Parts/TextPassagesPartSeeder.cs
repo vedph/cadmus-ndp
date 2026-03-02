@@ -1,7 +1,6 @@
 ﻿using Bogus;
 using Cadmus.Core;
 using Cadmus.Ndp.Parts;
-using Cadmus.Refs.Bricks;
 using Fusi.Tools;
 using Fusi.Tools.Configuration;
 using System;
@@ -77,11 +76,8 @@ public sealed class TextPassagesPartSeeder : PartSeederBase,
         {
             TextPassage passage = new()
             {
-                Location = new DocReference
-                {
-                    Citation = BuildLocationFromPattern(
-                        _options.LocationPattern, faker),
-                },
+                Citation = BuildLocationFromPattern(
+                        _options.CitationPattern, faker),
                 Text = faker.Lorem.Sentence(),
             };
 
@@ -127,11 +123,11 @@ public sealed class TextPassagesPartSeeder : PartSeederBase,
 public class TextPassagesPartSeederOptions
 {
     /// <summary>
-    /// The pattern for the location. Placeholders are {R} for an uppercase
+    /// The pattern for the citation. Placeholders are {R} for an uppercase
     /// Roman number, {r} for a lowercase Roman number, and {N} for an
     /// Arabic number.
     /// </summary>
-    public string LocationPattern { get; set; } = "@dc:If. {R} {N}";
+    public string CitationPattern { get; set; } = "@dc:If. {R} {N}";
 
     /// <summary>
     /// IDs for text-passage-tags.

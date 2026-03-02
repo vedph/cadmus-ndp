@@ -10,9 +10,14 @@ namespace Cadmus.Ndp.Parts;
 public class TextPassage
 {
     /// <summary>
-    /// The text passage location, like If.1,23.
+    /// The text passage start (or single) citation, like <c>@dc:If. I 23</c>.
     /// </summary>
-    public DocReference Location { get; set; } = new();
+    public string Citation { get; set; } = "";
+
+    /// <summary>
+    /// The text passage end citation, when a range is needed.
+    /// </summary>
+    public string? EndCitation { get; set; }
 
     /// <summary>
     /// A generic tag for the passage. Usually derived from thesaurus
@@ -44,7 +49,9 @@ public class TextPassage
     public override string ToString()
     {
         StringBuilder sb = new();
-        sb.Append(Location);
+        sb.Append(Citation);
+        if (!string.IsNullOrEmpty(EndCitation))
+            sb.Append(" - ").Append(EndCitation);
         if (!string.IsNullOrEmpty(Text)) sb.Append(": " + Text);
         return sb.ToString();
     }

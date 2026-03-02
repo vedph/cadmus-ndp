@@ -1,5 +1,4 @@
 ﻿using Cadmus.Core;
-using Cadmus.Refs.Bricks;
 using Cadmus.Seed.Ndp.Parts;
 using System;
 using System.Collections.Generic;
@@ -77,10 +76,7 @@ public sealed class TextPassagesPartTest
         {
             part.Passages.Add(new TextPassage
             {
-                Location = new DocReference
-                {
-                    Citation = $"Il.{n}"
-                }
+                Citation = $"Il.{n}"
             });
         }
 
@@ -95,7 +91,7 @@ public sealed class TextPassagesPartTest
 
         for (int n = 1; n <= 3; n++)
         {
-            pin = pins.Find(p => p.Name == "location" && p.Value == $"Il.{n}");
+            pin = pins.Find(p => p.Name == "citation" && p.Value == $"Il.{n}");
             Assert.NotNull(pin);
             TestHelper.AssertPinIds(part, pin!);
         }

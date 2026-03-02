@@ -33,7 +33,7 @@ public sealed class TextPassagesPart : PartBase
         if (Passages?.Count > 0)
         {
             foreach (TextPassage passage in Passages)
-                builder.AddValue("location", passage.Location.Citation);
+                builder.AddValue("citation", passage.Citation);
         }
 
         return builder.Build(this);
@@ -52,7 +52,7 @@ public sealed class TextPassagesPart : PartBase
                "The total count of entries."),
             new DataPinDefinition(DataPinValueType.String,
                 "location",
-                "The passages locations.",
+                "The passages citations.",
                 "M")
         ]);
     }
