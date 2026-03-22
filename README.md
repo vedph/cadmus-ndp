@@ -15,6 +15,9 @@ NDP-specific parts for Cadmus.
 
 ## History
 
+### 1.0.6
+
+- 2026-03-22: updated packages.
 - 2026-03-01: added text passages part.
 
 ### 1.0.4
